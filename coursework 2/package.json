@@ -1,0 +1,22 @@
+{
+  "name": "coursework-2",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "mongo-test": "node test_mongo.mjs"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "fetch": "^1.1.0",
+    "mongodb": "^7.0.0",
+    "openai": "^6.9.1"
+  }
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid Official - Madridistas Community</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg">
+</head>
+<body>
+
+    <!-- REAL MADRID HEADER -->
+    <header class="rm-header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid Logo" class="logo-image">
+                    <h1>REAL MADRID</h1>
+                </div>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="#" class="nav-link" id="navNews">NEWS</a>
+                <a href="#" class="nav-link" id="navTeam">TEAM</a>
+                <div class="nav-center-badge">
+                    <span class="trophy-count">15×</span>
+                    <span class="trophy-icon">🏆</span>
+                </div>
+                <a href="#" class="nav-link" id="navMatches">MATCHES</a>
+                <a href="#" class="nav-link" id="navCommunity">COMMUNITY</a>
+            </nav>
+
+            <div class="header-right">
+                <button id="headerAuthBtn" class="sign-in-btn">
+                    <span class="btn-icon">👤</span> Sign in
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero-section">
+        <div class="hero-card">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1600&q=80" alt="Real Madrid">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <span class="hero-badge">WELCOME MADRIDISTAS</span>
+                <h1>Join the Official Real Madrid Community</h1>
+                <p>Connect with millions of fans worldwide. Share your passion, stay updated with exclusive content, and be part of the greatest club in football history.</p>
+                <div class="hero-meta">
+                    <span>🏆 15× Champions League</span>
+                    <span>👥 Global Community</span>
+                    <span>⚽ Hala Madrid</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE SCORES SECTION -->
+     <section class="live-scores-section hidden" id="matchesSection">
+        <div class="container">
+            <div class="scores-card">
+                <div class="scores-header">
+                    <h3> Real Madrid Matches </h3>
+                    <button id="refreshScores" class="refresh-btn"> Refresh</button>
+                </div>
+                <div id="liveScores" class="scores-grid">
+                    <p class="loading">Loading matches...</p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- TEAM/SQUAD SECTION -->
+<section class="team-section hidden" id="teamSection">
+    <div class="container">
+        <div class="section-header">
+            <h2> Real Madrid Squad</h2>
+            <p>Meet the players of the greatest club in football history</p>
+        </div>
+        
+        <!-- Coach Card -->
+        <div id="coachCard" class="coach-card"></div>
+        
+        <!-- Players Grid -->
+        <div id="squadGrid" class="squad-grid">
+            <p class="loading">Loading squad...</p>
+        </div>
+    </div>
+</section>
+
+<!-- NEWS SECTION -->
+<section class="news-section hidden" id="newsSection">
+    <div class="container">
+        <div class="section-header">
+            <h2>📰 Latest Real Madrid News</h2>
+            <p>Stay updated with the latest news about Real Madrid</p>
+        </div>
+        
+        <div class="news-controls">
+            <button id="refreshNews" class="refresh-btn">🔄 Refresh News</button>
+        </div>
+        
+        <div id="newsGrid" class="news-grid">
+            <p class="loading">Loading news...</p>
+        </div>
+    </div>
+</section>
+
+    <!-- MAIN APP CONTENT -->
+    <main>
+        <div class="container">
+
+            <!-- Auth Section -->
+            <section id="authSection">
+                <div class="section-header">
+                    <h2>Join the Madridista Community</h2>
+                    <p>Connect with fans worldwide, share your passion, and stay updated with the latest news</p>
+                </div>
+                
+                <div class="grid-auth">
+                    <div class="card login-card">
+                        <div class="card-icon">🔐</div>
+                        <h3>Welcome Back</h3>
+                        <p class="card-subtitle">Sign in to your account</p>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginUsername">Username</label>
+                                <input type="text" id="loginUsername" name="username" placeholder="Enter your username" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required/>
+                            </div>
+                            <button type="submit" class="rm-btn">Sign in</button>
+                            <div class="msg" id="LoginMsg"></div>
+                        </form>
+                    </div>
+                    
+                    <div class="card register-card">
+                        <div class="card-icon">⚽</div>
+                        <h3>New Here?</h3>
+                        <p class="card-subtitle">Create your Madridista account</p>
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="registerUsername">Username</label>
+                                <input type="text" id="registerUsername" name="username" placeholder="Choose a username" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Password</label>
+                                <input type="password" id="registerPassword" name="password" placeholder="Min.  6 characters" minlength="6" required />
+                            </div>
+                            <button type="submit" class="rm-btn-secondary">Join Madridistas</button>
+                            <div class="msg" id="registerMsg"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feed Section -->
+            <section id="appSection" class="hidden">
+                <div class="welcome-banner">
+                    <h2 id="loginStatus"></h2>
+                    <p>Share your thoughts and connect with fellow Madridistas</p>
+                </div>
+
+                <div class="grid-feed">
+                    <!-- Post -->
+                    <div class="card post-card">
+                        <div class="card-header">
+                            <h3>✍️ Post Update</h3>
+                        </div>
+                        <form id="postForm">
+                            <textarea name="text" rows="4" placeholder="Share your thoughts about Real Madrid... "></textarea>
+                            <button type="submit" class="rm-btn">Post to Community</button>
+                        </form>
+                        <div class="msg" id="postMsg"></div>
+                    </div>
+                    
+                    <!-- Feed -->
+                    <div class="card feed-card">
+                        <div class="card-header">
+                            <h3>📰 Feed </h3>
+                            <button id="refreshFeedBtn" class="refresh-btn">🔄 Refresh</button>
+                        </div>
+                        <ul id="feedList" class="feed-list"></ul>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="card search-card">
+                        <div class="card-header">
+                            <h3>🔍 Find Fans</h3>
+                        </div>
+                        <form id="userSearchForm">
+                            <div class="search-input-group">
+                                <input type="text" name="q" placeholder="Search for Madridistas..." />
+                                <button type="submit" class="rm-btn-secondary">Search</button>
+                            </div>
+                        </form>
+                        <ul id="userResults" class="user-results"></ul>
+                    </div>
+                    
+                    <!-- Upload -->
+                    <div class="card upload-card">
+                        <div class="card-header">
+                            <h3>📸 Upload Photo</h3>
+                        </div>
+                        <form id="uploadForm">
+                            <div class="form-group">
+                                <label for="imageCaption">Caption (optional)</label>
+                                <input type="text" id="imageCaption" name="caption" placeholder="Add a caption for your photo..." />
+                            </div>
+
+                            <div class="upload-area">
+                                <input type="file" id="fileInput" name="file" accept="image/*" required />
+                                <label for="fileInput" class="file-label">
+                                    <span class="upload-icon">📁</span>
+                                    <span>Choose a file</span>
+                                 </label>
+                            </div>
+                            <button type="submit" class="rm-btn-secondary">Upload & Share</button>
+                        </form>
+                        <div class="msg" id="uploadMsg"></div>
+    
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="rm-footer">
+        <div class="footer-content">
+            <p>🏆 Hala Madrid 🏆</p>
+            <p class="footer-links">
+                <a href="#">About</a> • 
+                <a href="#">Contact</a> • 
+                <a href="#">Privacy</a> • 
+                <a href="#">Terms</a>
+            </p>
+            <p class="copyright">© 2025 Real Madrid Madridistas Community</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
